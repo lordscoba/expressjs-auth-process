@@ -4,7 +4,9 @@
   "description": "A backend nodejs script that is used for authentication",
   "main": "server.js",
   "scripts": {
-    "test": "start"
+    "test": "start",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,13 @@
   },
   "homepage": "https://github.com/lordscoba/expressjs-auth-process#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "mongoose": "^6.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }

@@ -1,10 +1,15 @@
+const user = require("../controllers/user");
 const express = require("express");
-const router = express.Router();
+const app = express();
+const routes = require("express").Router();
+const upload = require("../config/file");
 
-app.get("/", (req, res) => {
-  res.send("<h1>Hello from Nodemon!!!</h1>");
-});
+const multer = require("multer");
+const uploaden = multer({ dest: "upload/" });
 
-const tester = () => {};
+routes.get("/health", user.health);
+routes.post("/register", user.register);
+routes.put("/update/:id", user.update);
+routes.put("/picture/:id", upload.array("image", 3), user.picture);
 
-router.get("/test");
+module.exports = routes;

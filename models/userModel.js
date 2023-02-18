@@ -3,11 +3,6 @@ const mongoose = require("mongoose");
 
 const userSchema = mongoose.Schema(
   {
-    // id: {
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   unique: true,
-    //   required: true,
-    // },
     name: {
       type: String,
       required: true,
@@ -26,14 +21,11 @@ const userSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    type: {
-      type: String,
-    },
     age: {
       type: Number,
     },
     picture: {
-      type: String,
+      type: mongoose.Schema.Types.Mixed,
     },
     isVerified: {
       type: Boolean,
